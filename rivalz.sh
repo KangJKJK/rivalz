@@ -13,6 +13,12 @@ echo -e "${GREEN}Rivalz노드 설치를 시작합니다.${NC}"
 
 cd $HOME
 
+# 기존 폴더가 존재한다면 삭제합니다.
+if [ -d "/root/.rivalz" ]; then
+  echo -e "${RED}폴더가 존재하므로 삭제합니다.${NC}"
+  sudo rm -rf /root/.rivalz
+fi
+
 # NVM이 이미 설치되어 있는지 확인
 if [ -d "$HOME/.nvm" ] || [ -d "/usr/local/share/nvm" ]; then
     print_command "NVM이 이미 설치되어 있습니다."
@@ -58,8 +64,13 @@ print_command "Rivalz CLI 패키지 설치 중..."
 npm i -g rivalz-node-cli
 
 print_command "Rivalz 노드 실행 중..."
-# Rivalz 노드를 실행합니다.
-rivalz run
+
+# 필요한 패키지 설치
+sudo apt-get update
+sudo apt-get install -y screen
+
+# 새로운 screen 세션을 생성하여 노드를 실행합니다.
+screen -dmS rivalz run
 
 echo -e "${GREEN}모든 작업이 완료되었습니다. 컨트롤+A+D로 스크린을 종료해주세요.${NC}"
 echo -e "${GREEN}스크립트 작성자: https://t.me/kjkresearch${NC}"
