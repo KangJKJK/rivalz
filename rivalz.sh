@@ -65,12 +65,8 @@ npm i -g rivalz-node-cli
 
 print_command "Rivalz 노드 실행 중..."
 
-# 필요한 패키지 설치
-sudo apt-get update
-sudo apt-get install -y screen
-
-# 새로운 screen 세션을 생성하여 노드를 실행합니다.
-screen -dmS rivalz run
+# 노드를 실행합니다.
+rivalz run
 
 echo -e "${GREEN}모든 작업이 완료되었습니다. 컨트롤+A+D로 스크린을 종료해주세요.${NC}"
 echo -e "${GREEN}스크립트 작성자: https://t.me/kjkresearch${NC}"
