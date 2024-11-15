@@ -28,7 +28,7 @@ else
     echo -e "${BOLD}NVM과 Node 설치 중...${RESET}"
     
     # NVM(Node Version Manager)과 Node.js를 설치합니다.
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 fi
 
 # NVM 디렉터리를 설정합니다.
