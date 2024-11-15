@@ -50,8 +50,8 @@ fi
 echo -e "${BOLD}Node 버전 관리자를 사용 중...${RESET}"
 
 # nvm을 사용하여 Node.js를 설치하고 사용합니다.
-nvm install node
-nvm use node
+nvm install 20
+nvm use 20
 
 # npm이 설치되어 있는지 확인
 if ! command -v npm &> /dev/null; then
